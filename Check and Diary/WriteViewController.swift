@@ -8,13 +8,28 @@
 
 import UIKit
 
+var Item = [String]()
+
 class WriteViewController: UIViewController {
+
+    @IBOutlet weak var hitokoto: UITextField!
+    @IBAction func toroku(sender: AnyObject) {
+        Item.append(hitokoto.text!)
+        hitokoto.text = ""
+        NSUserDefaults.standardUserDefaults().setObject(Item, forKey: "diary")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+   
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        hitokoto.resignFirstResponder()
+        return true
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

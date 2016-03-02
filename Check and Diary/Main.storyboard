@@ -47,9 +47,6 @@
                                 <rect key="frame" x="71" y="411" width="232" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="ふたりのあいしょう"/>
-                                <connections>
-                                    <segue destination="2Z3-xF-pey" kind="presentation" id="9lk-bp-Hor"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -97,10 +94,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ListTable" destination="zyK-lM-GL1" id="JVt-wV-TQT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKj-bS-QPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481.5" y="1195.5"/>
+            <point key="canvasLocation" x="471.5" y="383.5"/>
         </scene>
         <!--WriteViewController-->
         <scene sceneID="cEY-qp-GDE">
@@ -115,13 +115,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maru16.gif" translatesAutoresizingMaskIntoConstraints="NO" id="XRk-RJ-8KK">
-                                <rect key="frame" x="117" y="269" width="31" height="32"/>
+                                <rect key="frame" x="114" y="230" width="31" height="32"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sankaku16.gif" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-nN-iXs">
-                                <rect key="frame" x="217" y="269" width="35" height="32"/>
+                                <rect key="frame" x="217" y="230" width="35" height="32"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="batsu16.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Yrq-Ny-ghs">
-                                <rect key="frame" x="322" y="269" width="33" height="33"/>
+                                <rect key="frame" x="320" y="230" width="33" height="33"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="きもち" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0T-vs-weh">
                                 <rect key="frame" x="20" y="272" width="86" height="26"/>
@@ -129,12 +129,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="IPp-Ug-sWc">
-                                <rect key="frame" x="114" y="137" width="241" height="62"/>
-                                <date key="date" timeIntervalSinceReferenceDate="477643095.67166299">
-                                    <!--2016-02-20 06:38:15 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ひづけ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz1-AN-TGR">
                                 <rect key="frame" x="20" y="156" width="86" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -156,7 +150,27 @@
                                 <rect key="frame" x="96" y="516" width="183" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="とうろくする"/>
+                                <connections>
+                                    <action selector="toroku:" destination="wJC-bp-hmu" eventType="touchUpInside" id="0zj-JZ-mbk"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUx-C0-4Wy">
+                                <rect key="frame" x="200" y="270" width="69" height="30"/>
+                                <state key="normal" title="さんかく"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1B-WV-nzk">
+                                <rect key="frame" x="313" y="270" width="46" height="30"/>
+                                <state key="normal" title="ばつ"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7r-q5-6zy">
+                                <rect key="frame" x="106" y="270" width="46" height="30"/>
+                                <state key="normal" title="まる"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggI-ia-kZ3">
+                                <rect key="frame" x="114" y="155" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -169,52 +183,13 @@
                         <barButtonItem key="rightBarButtonItem" id="PHa-oK-Big"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="hitokoto" destination="Z5u-x8-kgE" id="iKa-pc-XhG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Zm-hn-UoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.5" y="1195.5"/>
-        </scene>
-        <!--AishoViewController-->
-        <scene sceneID="LZP-Je-nNv">
-            <objects>
-                <viewController title="AishoViewController" id="2Z3-xF-pey" customClass="AishoViewController" customModule="Check_and_Diary" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5cA-4G-j5f"/>
-                        <viewControllerLayoutGuide type="bottom" id="fZ8-J3-vaI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kMH-c5-gMV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ふたりのあいしょう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c9-BR-qxP">
-                                <rect key="frame" x="111" y="28" width="153" height="47"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvo-G7-IVk">
-                                <rect key="frame" x="294" y="37" width="61" height="30"/>
-                                <state key="normal" title="くわしく"/>
-                                <connections>
-                                    <segue destination="GgE-RU-lgt" kind="show" id="EtB-xV-leX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sy8-D4-1U3">
-                                <rect key="frame" x="20" y="37" width="61" height="30"/>
-                                <state key="normal" title="もどる"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Pop-RZ-2tO"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UNx-OE-c8r"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UOV-pa-nvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481.5" y="383.5"/>
+            <point key="canvasLocation" x="971.5" y="383.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ts0-Ec-T1u">
@@ -233,7 +208,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1OE-WI-8rD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.5" y="1195.5"/>
+            <point key="canvasLocation" x="-18.5" y="1239.5"/>
         </scene>
     </scenes>
     <resources>
@@ -242,7 +217,6 @@
         <image name="sankaku16.gif" width="16" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3mH-ow-Q1I"/>
-        <segue reference="7zW-jZ-Mnp"/>
+        <segue reference="Sqq-G5-EA1"/>
     </inferredMetricsTieBreakers>
 </document>
